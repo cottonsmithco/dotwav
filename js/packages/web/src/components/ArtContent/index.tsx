@@ -122,7 +122,7 @@ const VideoArtContent = ({
           width={600}
           controls={false}
           videoDimensions={{
-            videoHeight: 700,
+            videoHeight: 200,
             videoWidth: 400,
           }}
           autoplay={true}
@@ -153,6 +153,59 @@ const VideoArtContent = ({
             <source src={f.uri} type={f.type} style={style} />
           ))}
       </video>
+    );
+
+  return content;
+};
+
+const AudioArtContent = ({
+  className,
+  style,
+  files,
+  uri,
+  animationURL,
+  active,
+}: {
+  className?: string;
+  style?: React.CSSProperties;
+  files?: (MetadataFile | string)[];
+  uri?: string;
+  animationURL?: string;
+  active?: boolean;
+}) => {
+
+  const likelyAudio = (files || []).filter((f, index, arr) => {
+    if (typeof f !== 'string') {
+      return false;
+    }
+
+    // TODO: filter by fileType
+    return arr.length >= 2 ? index === 1 : index === 0;
+  })?.[0] as string;
+
+  const content =
+     (
+      <audio
+        className={className}
+        playsInline={true}
+        autoPlay={true}
+        controls={true}
+        controlsList="nodownload"
+        style={style}
+        loop={true}
+      >
+        {likelyAudio && (
+          <source src={likelyAudio} type="audio/mpeg" style={style} />
+        )}
+        {animationURL && (
+          <source src={animationURL} type="video/mp4" style={style} />
+        )}
+        {files
+          ?.filter(f => typeof f !== 'string')
+          .map((f: any) => (
+            <source src={f.uri} type={f.type} style={style} />
+          ))}
+      </audio>
     );
 
   return content;
@@ -337,6 +390,7 @@ export const ArtContent = ({
 
   const content =
     categoryState === 'video' ? (
+      <div>
       <VideoArtContent
         className={className}
         style={style}
@@ -345,6 +399,15 @@ export const ArtContent = ({
         animationURL={animationURLState}
         active={active}
       />
+      <AudioArtContent
+        className={className}
+        style={style}
+        files={filesState}
+        uri={uriState}
+        animationURL={animationURLState}
+        active={active}
+      />
+      </div>
     ) : (
       <CachedImageContent
         uri={uriState}
@@ -352,6 +415,7 @@ export const ArtContent = ({
         preview={preview}
         style={style}
       />
+      
     );
 
   return (

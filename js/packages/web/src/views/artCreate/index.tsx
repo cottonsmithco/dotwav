@@ -241,7 +241,7 @@ const CategoryStep = (props: {
       <Row className="call-to-action">
         <h2>Create a new item</h2>
         <p>
-          First time creating on Metaplex?{' '}
+          First time creating on .WAV?{' '}
           <a href="https://docs.metaplex.com/create-store/sell" target="_blank" rel="noreferrer">
             Read our creators’ guide.
           </a>
@@ -268,7 +268,7 @@ const CategoryStep = (props: {
               onClick={() => props.confirm(MetadataCategory.Video)}
             >
               <div>
-                <div>Video</div>
+                <div>Music Video</div>
                 <div className="type-btn-description">MP4, MOV</div>
               </div>
             </Button>
@@ -282,30 +282,6 @@ const CategoryStep = (props: {
               <div>
                 <div>Audio</div>
                 <div className="type-btn-description">MP3, WAV, FLAC</div>
-              </div>
-            </Button>
-          </Row>
-          <Row>
-            <Button
-              className="type-btn"
-              size="large"
-              onClick={() => props.confirm(MetadataCategory.VR)}
-            >
-              <div>
-                <div>AR/3D</div>
-                <div className="type-btn-description">GLB</div>
-              </div>
-            </Button>
-          </Row>
-          <Row>
-            <Button
-              className="type-btn"
-              size="large"
-              onClick={() => props.confirm(MetadataCategory.HTML)}
-            >
-              <div>
-                <div>HTML Asset</div>
-                <div className="type-btn-description">HTML</div>
               </div>
             </Button>
           </Row>

@@ -766,19 +766,6 @@ const CategoryStep = (props: {
             </Button>
           </Row>
           <Row>
-            <Button
-              className="type-btn"
-              size="large"
-              onClick={() => props.confirm(AuctionCategory.Tiered)}
-            >
-              <div>
-                <div>Tiered Auction</div>
-                <div className="type-btn-description">
-                  Participants get unique rewards based on their leaderboard
-                  rank
-                </div>
-              </div>
-            </Button>
           </Row>
           <Row>
             <Button
