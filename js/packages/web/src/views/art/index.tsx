@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { MetadataCategory, MetadataFile, pubkeyToString } from '@oyster/common';
 import {
   Row,
   Col,
@@ -24,7 +25,13 @@ import { ArtMinting } from '../../components/ArtMinting';
 
 const { Content } = Layout;
 
-export const ArtView = () => {
+export const ArtView = ({
+  uri,
+  files,
+}: {
+  uri?: string;
+  files?: (MetadataFile | string)[];
+}) => {
   const { id } = useParams<{ id: string }>();
   const wallet = useWallet();
   const [remountArtMinting, setRemountArtMinting] = useState(0);
@@ -89,7 +96,7 @@ export const ArtView = () => {
             style={{ paddingRight: '30px' }}
           >
             <ArtContent
-              style={{ width: '100%', height: 'auto', margin: '0 auto' }}
+              style={{ width: '50%', height: 'auto', margin: '0 auto' }}
               height={300}
               width={300}
               className="artwork-image"

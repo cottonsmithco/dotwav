@@ -70,6 +70,7 @@ export const AuctionItem = ({
     aspectRatio: '1/1',
   };
   return (
+    <div>
     <ArtContent
       pubkey={id}
       className="artwork-image stack-item"
@@ -77,6 +78,7 @@ export const AuctionItem = ({
       active={active}
       allowMeshRender={true}
     />
+    </div>
   );
 };
 

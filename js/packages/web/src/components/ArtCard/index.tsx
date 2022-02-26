@@ -92,7 +92,6 @@ export const ArtCard = (props: ArtCardProps) => {
           uri={image}
           animationURL={animationURL}
           category={category}
-          preview={preview}
           height={height}
           width={width}
           artView={artView}

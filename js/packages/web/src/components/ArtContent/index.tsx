@@ -8,6 +8,7 @@ import { Stream, StreamPlayerApi } from '@cloudflare/stream-react';
 import { PublicKey } from '@solana/web3.js';
 import { getLast } from '../../utils/utils';
 import styled from 'styled-components';
+import { PreLaunchView } from '../../views/preLaunch';
 
 const MeshArtContent = ({
   uri,
@@ -57,7 +58,6 @@ export const CachedImageContent = ({
 
   return (
     <Image
-      fallback="image-placeholder.svg"
       src={cachedBlob}
       preview={preview}
       wrapperClassName={className}
@@ -117,13 +117,13 @@ const VideoArtContent = ({
           src={likelyVideo.replace('https://watch.videodelivery.net/', '')}
           loop={true}
           // @ts-ignore
-          height={600}
+          height={20}
           // @ts-ignore
-          width={600}
+          width={20}
           controls={false}
           videoDimensions={{
-            videoHeight: 200,
-            videoWidth: 400,
+            videoHeight: 20,
+            videoWidth: 20,
           }}
           autoplay={true}
           muted={true}
@@ -134,10 +134,8 @@ const VideoArtContent = ({
         className={className}
         playsInline={true}
         autoPlay={true}
-        muted={true}
-        controls={true}
         controlsList="nodownload"
-        style={style}
+        style={{maxHeight:'25rem', minWidth: '5rem', ...style}}
         loop={true}
         poster={uri}
       >
@@ -185,14 +183,18 @@ const AudioArtContent = ({
 
   const content =
      (
-      <audio
+       <div>
+        <CachedImageContent
+        uri={uri}
         className={className}
+        preview={false}
+        style={{ width: '95%' }}
+      />
+      <audio
+        className='player'
         playsInline={true}
-        autoPlay={true}
         controls={true}
         controlsList="nodownload"
-        style={style}
-        loop={true}
       >
         {likelyAudio && (
           <source src={likelyAudio} type="audio/mpeg" style={style} />
@@ -206,6 +208,7 @@ const AudioArtContent = ({
             <source src={f.uri} type={f.type} style={style} />
           ))}
       </audio>
+      </div>
     );
 
   return content;
@@ -389,16 +392,7 @@ export const ArtContent = ({
   }
 
   const content =
-    categoryState === 'video' ? (
-      <div>
-      <VideoArtContent
-        className={className}
-        style={style}
-        files={filesState}
-        uri={uriState}
-        animationURL={animationURLState}
-        active={active}
-      />
+    categoryState === 'audio' ? (
       <AudioArtContent
         className={className}
         style={style}
@@ -407,16 +401,17 @@ export const ArtContent = ({
         animationURL={animationURLState}
         active={active}
       />
-      </div>
     ) : (
-      <CachedImageContent
-        uri={uriState}
+      <VideoArtContent
         className={className}
-        preview={preview}
         style={style}
+        files={filesState}
+        uri={uriState}
+        animationURL={animationURLState}
+        active={active}
       />
-      
     );
+
 
   return (
     <ArtContentWrapper

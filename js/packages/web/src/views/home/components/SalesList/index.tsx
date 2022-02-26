@@ -31,8 +31,8 @@ export const SalesListView = () => {
     <>
       <Banner
         src=""
-        headingText="The amazing world of .WAV"
-        subHeadingText="Buy exclusive Music"
+        headingText=".WAV"
+        subHeadingText="Buy, sell and listen to the Music you love"
         actionComponent={<HowToBuyModal buttonClassName="secondary-btn" />}
         useBannerBg
       />
