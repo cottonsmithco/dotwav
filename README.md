@@ -1,10 +1,4 @@
-<p align="center">
-  <a href="https://metaplex.com">
-   <img alt="Metaplex" src="js/packages/web/public/metaplex-logo.svg" width="250" />
-  </a>
-</p>
-
-Metaplex is a protocol built on top of Solana that allows:
+edit
 
 - **Creating/Minting** non-fungible tokens;
 - **Starting** a variety of auctions for primary/secondary sales;
@@ -31,6 +25,7 @@ $ yarn bootstrap
 $ yarn build
 $ docker-compose up -d
 $ SUBDOMAIN='store-subdomain' yarn start
+$ SUBDOMAIN='wav' yarn start
 ```
 
 Navigate to `http://localhost:3000/` to explore the deployed application.

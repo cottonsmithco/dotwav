@@ -28,11 +28,11 @@ export const Banner = ({
 
   return (
     <div id="metaplex-banner">
-      {src ? (
-        <img id="metaplex-banner-backdrop" src={src} />
-      ) : (
-        <div className="metaplex-margin-top-12"></div>
-      )}
+      <div className="banner-content">
+          <div id={'main-heading'}></div>
+          <div id={'sub-heading'}></div>
+         
+      </div>
 
       <div className="logo-wrapper">
         <Link to="/" id="metaplex-header-logo">
@@ -42,7 +42,7 @@ export const Banner = ({
 
       <div id="metaplex-banner-hero">
         <h1>{headingText}</h1>
-        {subHeadingText && <Text>{subHeadingText}</Text>}
+        {/*subHeadingText && <Text>{subHeadingText}</Text>*/}
         {twitterVerification ? (
           <a
             href={'https://twitter.com/' + twitterVerification}

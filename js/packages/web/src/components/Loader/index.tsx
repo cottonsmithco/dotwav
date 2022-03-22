@@ -13,7 +13,7 @@ export const LoaderProvider: FC = ({ children }) => {
     <>
       <div id="metaplex-loading" className={cx({ "loading": loading })}>
         <img id="metaplex-loading-icon" src={storefront.theme.logo} />
-        <div id="metaplex-loading-text">loading</div>
+        <div id="metaplex-loading-text">collecting 0's and 1's</div>
         <Spinner />
       </div>
       {!loading && children}

@@ -13,29 +13,9 @@ export const CategoryStep = (props: {
           <Space className="metaplex-fullwidth" direction="vertical">
             {[
               {
-                cat: MetadataCategory.Image,
-                title: 'Image',
-                types: ['JPG', 'PNG', 'GIF'],
-              },
-              {
-                cat: MetadataCategory.Video,
-                title: 'Video',
-                types: ['MP4', 'MOV'],
-              },
-              {
                 cat: MetadataCategory.Audio,
                 title: 'Audio',
                 types: ['MP3', 'WAV', 'FLAC'],
-              },
-              {
-                cat: MetadataCategory.VR,
-                title: 'AR/3D',
-                types: ['GLB'],
-              },
-              {
-                cat: MetadataCategory.HTML,
-                title: 'HTML Asset',
-                types: ['HTML'],
               },
             ].map(({ cat, title, types }) => (
               <Button

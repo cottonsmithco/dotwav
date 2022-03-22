@@ -11,6 +11,7 @@ import {
   HomeView,
   SetupView,
   Listings,
+  PlayerView,
 } from './views';
 import { AdminView } from './views/admin';
 import { BillingView } from './views/auction/billing';
@@ -40,6 +41,10 @@ function App({ storefront }: AppProps) {
           <Route
             path="/listings/:id"
             element={<AuctionView />}
+          />
+          <Route
+            path="/home:id"
+            element={<PlayerView />}
           />
           <Route path="/setup" element={<SetupView />} />
           <Route path="/" element={<HomeView />} />

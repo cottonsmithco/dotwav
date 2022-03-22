@@ -1,5 +1,5 @@
 export const LABELS = {
-  STORE_NAME: 'Holaplex',
+  STORE_NAME: '.WAV',
   CONNECT_LABEL: 'Connect Wallet',
   GIVE_SOL: 'Give me SOL',
   FAUCET_INFO:

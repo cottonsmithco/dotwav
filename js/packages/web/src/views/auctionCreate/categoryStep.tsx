@@ -20,16 +20,17 @@ export const CategoryStep = (props: {
                 title: 'Instant Sale',
                 desc: 'At a fixed price, sell a single Master NFT or copies of it',
               },
-              {
-                cat: AuctionCategory.Single,
-                title: 'Sell an Existing NFT',
-                desc: 'Sell an existing item in your NFT collection, including Master NFTs',
-              },
-              {
-                cat: AuctionCategory.Limited,
-                title: 'Limited Edition',
-                desc: 'Sell a limited copy or copies of a single Master NFT',
-              },
+              //{
+              //  cat: AuctionCategory.Single,
+              //  title: 'Sell an Existing NFT',
+              //  desc: 'Sell an existing item in your NFT collection, including Master NFTs',
+              //},
+              //{
+              //  cat: AuctionCategory.Limited,
+              //  title: 'Limited Edition',
+              //  desc: 'Sell a limited copy or copies of a single Master NFT',
+              //},
+              
               // {
               //   cat: AuctionCategory.Open,
               //   title: 'Open Edition',

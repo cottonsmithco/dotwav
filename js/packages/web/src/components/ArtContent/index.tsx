@@ -3,6 +3,7 @@ import { MetadataCategory, MetadataFile, pubkeyToString } from '@oyster/common';
 import { PublicKey } from '@solana/web3.js';
 import Loading from 'react-loading';
 import { Image } from 'antd';
+import { PlaySquareOutlined } from '@ant-design/icons';
 import React, { ReactElement, useCallback, useEffect, useState } from 'react';
 import cx from 'classnames';
 import { useCachedImage, useExtendedArt } from '../../hooks';
@@ -110,10 +111,11 @@ const VideoArtContent = ({
         muted={true}
       />
     ) : (
+      <div>
       <video
         className="metaplex-video-content"
         playsInline={true}
-        autoPlay={true}
+        autoPlay={false}
         muted={true}
         controls={true}
         controlsList="nodownload"
@@ -128,6 +130,10 @@ const VideoArtContent = ({
           <source key={i} src={f.uri} type={f.type} />
         ))}
       </video>
+      <PlaySquareOutlined
+        
+      />
+      </div>   
     );
 
   return <div className="metaplex-video-content">{content}</div>;
@@ -168,7 +174,7 @@ const HTMLContent = ({
     </div>
   );
 };
-
+//create currentArt
 export const ArtContent = ({
   category,
   preview,

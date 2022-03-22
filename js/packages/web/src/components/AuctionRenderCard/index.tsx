@@ -3,6 +3,7 @@ import React from 'react';
 import { AuctionView, useArt } from '../../hooks';
 import { AmountLabel } from '../AmountLabel';
 import { ArtContent } from '../ArtContent';
+import { PlaySquareOutlined } from '@ant-design/icons';
 import { AuctionCountdown } from '../AuctionNumbers';
 import { getHumanStatus, useAuctionStatus } from './hooks/useAuctionStatus';
 export interface AuctionCard extends CardProps {
@@ -19,8 +20,8 @@ export const AuctionRenderCard = (props: AuctionCard) => {
   const humanStatus = getHumanStatus(status);
 
   const card = (
-    <Card hoverable bordered={false} className="metaplex-round-corners">
-      <Space direction="vertical" className="metaplex-fullwidth">
+    <Card hoverable bordered={false} className="auction-song">
+      <Space direction="vertical" >
         <ArtContent
           square
           backdrop="light"
@@ -32,17 +33,18 @@ export const AuctionRenderCard = (props: AuctionCard) => {
           {name}
         </h3>
 
-        {!status.isInstantSale && status.isLive && (
+        {/*!status.isInstantSale && status.isLive && (
           <div>
             <p className="metaplex-margin-top-2 metaplex-margin-bottom-1 metaplex-reduced-font-size">
               Ending in
             </p>
             <AuctionCountdown auctionView={auctionView} labels={false} />
           </div>
-        )}
+        )*/}
       </Space>
       <Divider />
-      <AmountLabel title={humanStatus} amount={amount} />
+      <AmountLabel /*title={humanStatus}*/ amount={amount} />
+
     </Card>
   );
 

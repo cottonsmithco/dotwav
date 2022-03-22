@@ -45,12 +45,21 @@
 
   &.metaplex-square-aspect {
     position: relative;
-    overflow: hidden;
-    margin: 0 auto;
+    overflow: fixed;
+    margin: 3 auto;
+    min-width: 9rem;
     &:after {
       content: '';
       display: block;
       padding-bottom: 100%;
+    }
+    .metaplex-video-content{
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22rem;
+
     }
 
     .ant-image,

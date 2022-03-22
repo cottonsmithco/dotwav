@@ -69,7 +69,7 @@ export const Footer = () => {
       <div>
         {footerConf.showShopName ? (
           <div>
-            <div>{LABELS.STORE_NAME} NFT Marketplace</div>
+            <div>{LABELS.STORE_NAME}</div>
             <div>Powered by Metaplex and Solana</div>
           </div>
         ) : null}

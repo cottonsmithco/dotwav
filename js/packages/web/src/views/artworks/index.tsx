@@ -63,7 +63,7 @@ export const ArtworksView = () => {
         <div className="flex items-center">
           <h2>Owned Artwork</h2>
           <Tooltip
-            title="NFTs minted with the same wallet that created this store shows up here, or ones you have bought from the store with your connected wallet."
+            title="NFTs minted on .WAV show up here."
             className="ml-2"
           >
             <InfoCircleFilled size={12} />
@@ -77,14 +77,14 @@ export const ArtworksView = () => {
               onClick={() => setShowMintModal(true)}
               className=""
             >
-              Mint NFTs
+              Mint .WAVs
             </Button>
           )}
 
           {ownedMetadata.length ? (
             <Link to="/listings/new/0" className="ml-4">
               <Button size="large" type="primary">
-                Sell NFT
+                Sell .WAVs
               </Button>
             </Link>
           ) : null}
@@ -126,7 +126,7 @@ export const ArtworksView = () => {
                 {canCreate && (
                   <>
                     <p className="mt-1 text-sm opacity-75">
-                      Get started by minting some NFTs.
+                      Get started by minting some .WAVs
                     </p>
                     <div className="mt-6">
                       <Button
@@ -134,7 +134,7 @@ export const ArtworksView = () => {
                         type="primary"
                         onClick={() => setShowMintModal(true)}
                       >
-                        Mint NFTs
+                        Mint .WAV
                       </Button>
                     </div>
                   </>

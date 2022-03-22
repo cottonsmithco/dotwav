@@ -71,8 +71,8 @@
     "test": "jest --passWithNoTests",
     "deploy:s3": "yarn export && aws s3 sync ../../build/web",
     "deploy:ar": "yarn export && arweave deploy-dir  ../../build/web --key-file ",
-    "deploy:gh": "yarn export && gh-pages -d ../../build/web --repo https://github.com/metaplex-foundation/metaplex -t true",
-    "deploy": "cross-env ASSET_PREFIX=/metaplex/ yarn build && yarn deploy:gh",
+    "deploy:gh": "yarn export && gh-pages -d ../../build/web --repo https://github.com/cottonsmithco/dotwav -t true",
+    "deploy": "cross-env ASSET_PREFIX=/dotwav/ yarn build && yarn deploy:gh",
     "format:fix": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|css|less|md)\""
   },
   "browserslist": {
