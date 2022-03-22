@@ -2,7 +2,6 @@ import { Storefront } from '@oyster/common';
 import { Layout, notification } from 'antd';
 import React, { ReactNode, useEffect, useState } from 'react';
 import { AppBar } from '../AppBar';
-import { Player } from '../Player';
 import { AuctionViewItem } from '../../../../common/src/models/metaplex/index'; 
 //import { AuctionItem, AuctionView } from '../../views/auction';
 //import { AuctionCard } from '../AuctionCard';
