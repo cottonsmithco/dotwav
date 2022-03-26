@@ -12,11 +12,14 @@ import { LoaderProvider } from './components/Loader';
 import { CoingeckoProvider } from './contexts/coingecko';
 import { Storefront } from '@oyster/common';
 import { AnalyticsProvider } from './contexts';
+import { AuctionItem } from './views/auction';
 
 interface ProvidersProps {
   storefront: Storefront;
   children: React.ReactNode;
 }
+
+
 
 export const Providers: FC<ProvidersProps> = ({ children, storefront }) => {
   return (
@@ -32,7 +35,7 @@ export const Providers: FC<ProvidersProps> = ({ children, storefront }) => {
                 <LoaderProvider>
                   <ConfettiProvider>
                     <AnalyticsProvider>
-                      <AppLayout storefront={storefront}>{children}</AppLayout>
+                      <AppLayout storefront={storefront} >{children}</AppLayout>
                     </AnalyticsProvider>
                   </ConfettiProvider>
                 </LoaderProvider>

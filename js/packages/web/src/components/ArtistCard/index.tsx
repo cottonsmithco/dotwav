@@ -11,7 +11,6 @@ export const ArtistCard = ({
   artist,
   twitterVerification,
   ownerAddress,
-  headingText,
 }: /* active, */
 {
   artist: Artist;
@@ -19,7 +18,6 @@ export const ArtistCard = ({
   twitterVerification?: string;
   social?: StorefrontSocialInfo;
   ownerAddress?: string;
-  headingText: string;
 }) => {
   const wallet = useWallet();
   return (
@@ -44,7 +42,6 @@ export const ArtistCard = ({
       </div>
       {artist.about && <div className="about">{artist.about}</div>}
       <div id="metaplex-banner-hero">
-        <h1>{headingText}</h1>
         {/*subHeadingText && <Text>{subHeadingText}</Text>*/}
         {twitterVerification ? (
           <a
